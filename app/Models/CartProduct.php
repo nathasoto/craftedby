@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Shop extends Model
+class CartProduct extends Model
 {
     use HasFactory;
     use HasUuids;
@@ -14,12 +14,16 @@ class Shop extends Model
     public $incrementing = false; /* because UUID (Universally Unique Identifier)*/
 
     protected $fillable = [
-        'name', 'history', 'production_methods', 'specialties', 'zip_code', 'description', 'users_id',
+        'quantity', 'carts_id', 'products_id',
     ];
-
-    public function user()
+    public function cart()
     {
-        return $this->belongsTo(User::class, 'users_id');
+        return $this->belongsTo(Cart::class, 'carts_id');
     }
 
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'products_id');
+    }
 }

@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Categories;
 use App\Models\User;
+use App\Models\cart;
 use Illuminate\Auth\Access\Response;
 
-class CategoryPolicy
+class CartPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class CategoryPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Categories $category): bool
+    public function view(User $user, cart $cart): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class CategoryPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Categories $category): bool
+    public function update(User $user, cart $cart): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class CategoryPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Categories $category): bool
+    public function delete(User $user, cart $cart): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class CategoryPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Categories $category): bool
+    public function restore(User $user, cart $cart): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class CategoryPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Categories $category): bool
+    public function forceDelete(User $user, cart $cart): bool
     {
         //
     }

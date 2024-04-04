@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product_Order;
-use App\Http\Requests\StoreProduct_OrderRequest;
-use App\Http\Requests\UpdateProduct_OrderRequest;
+use App\Models\cart_product;
+use App\Http\Requests\Storecart_productRequest;
+use App\Http\Requests\Updatecart_productRequest;
 
-class ProductOrderController extends Controller
+class CartProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class ProductOrderController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProduct_OrderRequest $request)
+    public function store(Storecart_productRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class ProductOrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product_Order $product_Order)
+    public function show(cart_product $cart_product)
     {
         //
     }
@@ -43,7 +43,7 @@ class ProductOrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product_Order $product_Order)
+    public function edit(cart_product $cart_product)
     {
         //
     }
@@ -51,7 +51,7 @@ class ProductOrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProduct_OrderRequest $request, Product_Order $product_Order)
+    public function update(Updatecart_productRequest $request, cart_product $cart_product)
     {
         //
     }
@@ -59,7 +59,7 @@ class ProductOrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product_Order $product_Order)
+    public function destroy(cart_product $cart_product)
     {
         //
     }

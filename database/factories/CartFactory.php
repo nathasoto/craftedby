@@ -6,9 +6,9 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Order>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\cart>
  */
-class OrderFactory extends Factory
+class CartFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,13 +18,9 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         $userId = User::inRandomOrder()->first()->id;
-
         return [
-
-            'total' => fake()->randomFloat(2, 1, 10000),
-            'shipping address' => fake()->address,
-            'status' => fake()->randomElement(['pending', 'shipped', 'delivered']),
             'users_id' => $userId,
+            'status' =>fake()->randomElement(['active', 'inactive']),
         ];
     }
 }

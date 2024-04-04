@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,16 @@ class ShopFactory extends Factory
      */
     public function definition(): array
     {
+        $userId = User::inRandomOrder()->first()->id;
+
         return [
-            //
+            'name' => fake()->company,
+            'history' => fake()->paragraph,
+            'production_methods' => fake()->paragraph,
+            'specialties' => fake()->word,
+            'zip_code' => fake()->postcode,
+            'description' => fake()->paragraphs(3, true),
+            'users_id' => $userId
         ];
     }
 }
